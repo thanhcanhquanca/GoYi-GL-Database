@@ -2,9 +2,573 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>www.GoYi</title>
+    <link rel="stylesheet" href="/css/goyi.css">
+
 </head>
 <body>
-<h1>View show database</h1>
+<div class="qzBoxOuterDiv">
+
+    <div class="qzBoxTopDiv">
+        <!--        phần bọc logo , search , thongtin-->
+        <div class="qzBoxContainer">
+
+            <div class="qzBoxDivLogo">
+                <div class="qzDivImg">
+                    <img style="width: 100%; height: 100%;" src="/gif/scene.gif" alt="scene">
+                </div>
+            </div>
+
+
+            <div class="qzBoxSearch">
+                <div class="div-search">
+                    <label>
+                        <input id="search_input" class="input-search" type="text" placeholder="Nhập từ cần tìm kiếm ...">
+                    </label>
+                    <div class="separator-container">
+                        <div class="delete-search" id="delete-search-input">
+                            <img src="/svg/delete-search.svg" alt="delete_search">
+                        </div>
+                        <div class="separator">|</div>
+                        <div class="qz-search-ao">
+                            <img src="/svg/search-ao.svg" alt="search">
+                        </div>
+                    </div>
+                </div>
+                <!--               thêm nút-->
+
+            </div>
+
+
+
+            <!--phan boc nut dang nhap-->
+            <div class="qzBoxIngredients">
+                <div class="qz-ingredients">
+                    <img src="/svg/app-view.svg" alt="app view">
+                </div>
+
+                <div class="qz-ingredients">
+                    <img src="/svg/mailbox.svg" alt="mailbox">
+                </div>
+
+
+                <div class="qz-ingredients" id="create-button" >
+                    <img src="/svg/create-view.svg" alt="create view">
+                    <span >Tạo</span>
+                </div>
+
+                <div class="qz-ingredients">
+                    <img src="/svg/bull-view.svg" alt="bull view">
+                </div>
+
+                <div class="div-box-imgUsers">
+                    <div class="qz-btn-logo" id="showPopup">Đăng Nhập</div>
+                </div>
+
+                <div class="div-box-imgUsers">
+                    <img src="/img/avaTar.png" alt="img-icon-cn">
+                </div>
+            </div>
+            <!--kết thúc bọc nút đăng nhập  -->
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <!--phan boc ben duoi top-->
+    <div class="qzBoxBottom">
+        <div class="qzBoxListAll">
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/home-view.svg" alt="home">
+                </div>
+                <span class="qzSpanDiv">Home</span>
+            </div>
+
+            <!-- Nime icon với shorts -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/shorts-view.svg" alt="shorts">
+                </div>
+                <span class="qzSpanDiv">Shorts</span>
+            </div>
+
+
+            <!-- Kenh dang ky -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/channel-view.svg" alt="channel">
+                </div>
+                <span class="qzSpanDiv">Kênh đăng ký</span>
+            </div>
+
+
+            <div class="separator-bottom"></div>
+
+
+
+            <!-- bộ sửu tập yêu thích -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/collection-view.svg" alt="love">
+                </div>
+
+
+                <span class="qzSpanDiv">Yêu thích</span>
+            </div>
+
+
+
+
+            <!-- video đã thích -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/like-view.svg" alt="like view">
+                </div>
+
+
+                <span class="qzSpanDiv">Đã thích</span>
+            </div>
+
+
+
+
+            <!-- video xem sau -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/last-view.svg" alt="xem sau view">
+                </div>
+
+
+                <span class="qzSpanDiv">Xem sau</span>
+            </div>
+
+            <div class="separator-bottom"></div>
+
+            <!-- danh sách đăng ký -->
+
+            <div class="qz-list-channel">
+                <div class="qz-sub">
+                    Danh sách đăng ký
+                </div>
+
+                <div class="show-container">
+                    <p style="height: 180px"></p>
+                </div>
+            </div>
+
+            <div class="separator-bottom"></div>
+
+            <div class="qz-sub">
+                Danh sách danh mục
+            </div>
+
+
+            <!-- Phim -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/movie-view.svg" alt="movie view">
+
+                </div>
+
+
+                <span class="qzSpanDiv">Phim</span>
+            </div>
+
+
+
+            <!-- hoat hinh -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/anime-view.svg" alt="anime view">
+                </div>
+
+
+                <span class="qzSpanDiv">Hoạt hình</span>
+            </div>
+
+
+
+            <!-- âm nhạc -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/music-view.svg" alt="music view">
+                </div>
+
+
+                <span class="qzSpanDiv">Âm nhạc</span>
+            </div>
+
+
+            <!-- ẩm thực -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/cuisine-view.svg" alt="cuisine view">
+                </div>
+
+
+                <span class="qzSpanDiv">Ẩm Thực</span>
+            </div>
+
+
+
+
+            <!-- Giải Trí -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/amuse-view.svg" alt="amuse view">
+                </div>
+
+
+                <span class="qzSpanDiv">Giải trí</span>
+            </div>
+
+
+            <!-- trò chơi-->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/game-view.svg" alt="game view">
+
+                </div>
+
+
+                <span class="qzSpanDiv">Trò chơi</span>
+            </div>
+
+
+
+            <!-- Công nghệ -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/technology-view.svg" alt="technology view">
+                </div>
+
+
+                <span class="qzSpanDiv">Công nghệ</span>
+            </div>
+
+
+
+            <!-- thể thao  -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/sport-view.svg" alt="sport view">
+                </div>
+
+
+                <span class="qzSpanDiv">Thể thao</span>
+            </div>
+
+
+
+            <!-- Tin tức -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/news-view.svg" alt="news view">
+                </div>
+
+
+                <span class="qzSpanDiv">Tin tức</span>
+            </div>
+
+
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/vanhoa.svg" alt="vanhoa view">
+                </div>
+
+
+                <span class="qzSpanDiv">Văn hóa giáo dục</span>
+            </div>
+
+            <div class="separator-bottom"></div>
+
+            <!-- shope -->
+            <div class="qz-sub">
+                Shop đồ dùng
+            </div>
+
+
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/shop.svg" alt="shop view">
+                </div>
+                <span class="qzSpanDiv">Shop</span>
+            </div>
+
+
+
+            <div class="separator-bottom"></div>
+
+
+            <!-- Cài đặt -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/settings.svg" alt="setting view">
+                </div>
+
+
+                <span class="qzSpanDiv">Cài đặt</span>
+            </div>
+
+
+            <!-- Trợ giúp -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/help.svg" alt="help view">
+                </div>
+                <span class="qzSpanDiv">Trợ giúp</span>
+            </div>
+
+
+            <!-- Gửi ý kiến phản hồi -->
+            <div class="qzBoxItem">
+                <div class="qzIcon">
+                    <img src="/svg/opinion.svg" alt="opinion view">
+                </div>
+                <span class="qzSpanDiv">Gửi ý kiến phản hồi</span>
+            </div>
+
+            <div class="separator-bottom"></div>
+
+            <div class="qz-copyright-web">
+                <p style="height: 300px ; width: 100vw" >
+                    Giới thiệuTrở thành người sáng tạoKhiếu nại vi phạm phân phát quảng cáoChính
+                    sách quyền riêng tưThỏa
+                    thuận dịch vụ người dùngChính sách và thỏa thuận khácMCN
+
+                    Liên kết tình bạn: Cắt Douyin
+                    ICP Bắc Kinh số 12025439-172A
+                    Giấy phép kinh doanh viễn thông
+                    giá trị gia tăng Giấy chứng nhận ICP Bắc Kinh 140141 số
+                    Giấy phép sản
+                    xuất và kinh doanh chương trình phát thanh và truyền hình (Bắc Kinh) Zi số 03999
+                    Bắc Kinh Net Wen [2023] Số 3628-111
+                    Trung tâm Báo cáo Internet Trung Quốc | Giấy phép kinh doanh
+                    Nộp hồ sơ dịch vụ thông tin mạng lưới thuốc và trang thiết bị y tế
+                    Giấy phép Dịch
+                    vụ Thông tin Tôn giáo Internet, Bắc Kinh (2022) 0000074
+                    Báo cáo thông tin bất hợp pháp và bất lợi:
+                    400-140-2108
+                    Báo cáo đặc biệt về các khuyến nghị thuật toán: sfjubao@bytedance.com
+                    Email báo cáo: jubao@ixigua.com
+                    An ninh mạng công cộng Bắc Kinh số 11000002002050
+
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <!-- noi dung video ở giữa-->
+        <div class="qzContainerBottom">
+
+        </div>
+
+        <!--start popup div giao diện search lịch sử  -->
+        <div id="popup-container-search"  class="creat-search-popup">
+            <div class="container-search">
+
+            </div>
+        </div>
+
+
+        <!--bắt đầu giao diện div trực tiếp , tải video -->
+
+        <div id="popup-container"  class="creat-video-popup">
+            <div class="container">
+                <div class="item">
+                    <div class="icon">
+                        <img src="/svg/post-view.svg" alt="post view">
+                    </div>
+                    <span style="padding-right: 20px">Tải bài đăng </span>
+                </div>
+
+
+                <div class="item">
+                    <div class="icon">
+                        <img src="/svg/download-video.svg" alt="video view">
+                    </div>
+                    <span style="padding-right: 20px">Tải video lên </span>
+                </div>
+
+
+                <div class="item">
+                    <div class="icon">
+                        <img src="/svg/stream-view.svg" alt="stream view">
+                    </div>
+                    <span style="padding-right: 20px">Phát trực tiếp </span>
+                </div>
+
+
+                <div class="item">
+                    <div class="icon">
+                        <img src="/svg/download-shorts.svg" alt="shorts view">
+                    </div>
+                    <span style="padding-right: 20px">Tải video shorts </span>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!--end giao dien trưc tiep -->
+
+
+        <!-- start popup hiển thị giao diện đăng nhập -->
+
+        <div class="popup" id="boxPopup">
+            <div class="popup-content-box-box" id="box-box"></div>
+            <div class="popup-content" id="box-content-box">
+                <div class="popup-content-boo">
+                    <div class="close-popup" id="closePopup">
+                        <div class="div-content-0-vip" >
+                            <img src="/svg/close.svg" alt="Close Icon" width="20" height="20">
+                        </div>
+                    </div>
+                </div>
+                <!--start bọc thân-->
+                <div class="popup-content_box-body">
+
+                    <!--start div phần thân 1 -->
+                    <div class="qr-popup_no1">
+                        <div class="font-qr-qr">
+                            <div>Quét mã QR để đăng nhập</div>
+                        </div>
+                        <div>
+                            <img src="/img/lian.png" alt="img qr">
+                        </div>
+                    </div>
+                    <!--end div phần thân 1-->
+
+                    <!--start div phần thân 2 -->
+                    <div class="qr-popup_no2">
+                        <div class="separatorQr"></div>
+                    </div>
+                    <!--end div phần thân 2-->
+
+                    <!--start div phần thân 3 -->
+                    <div class="qr-popup_no3">
+                        <div class="box-logo-register_popup_no3">
+                            <div class="font-weight-box active-reg-login-form" id="btn_changerLogin">Đăng nhập QeZi</div>
+                            <div class="div-separator"> | </div>
+                            <div class="font-weight-box " id="btn_changerRegister">Đăng ký tài khoản</div>
+                        </div>
+
+                        <!-- start nút đăng nhập tk và password-->
+                        <div class="box-body-log-register" id="showPopupChangerLogin">
+                            <div class="container-log-register">
+                                <div class="box-login">Tài khoản</div>
+                                <div style="width: 68%">
+                                    <input class="input-all" type="text" placeholder="vui lòng nhập số điện thoại">
+                                </div>
+                            </div>
+
+                            <div class="container-log-password">
+                                <div class="box-login">Mật khẩu</div>
+                                <div style="width: 60%">
+                                    <input id="input_password_login" class="input-all" type="password" placeholder="vui lòng nhập mật khẩu">
+                                </div>
+
+                                <div class="box-eye" onclick="showEyesPasswordLogin()">
+                                    <img id="eyes_password_login" src="/svg/close-eyes.svg" alt="close-eye" width="20" height="20">
+                                </div>
+                            </div>
+
+                            <div class="qz-forgot-password">
+                                <div>Quyên mật khâu ?</div>
+                            </div>
+
+                            <div class="container-log-btn">
+                                <div class="btn-logo-logo">Đăng nhập</div>
+                            </div>
+
+                        </div>
+
+                        <!-- start div nhấn nút đăng ký tài khoản và password-->
+
+                        <div class="box-body-log-register-no2" id="showPopupChangerRegister">
+                            <div class="container-log-register_no1">
+                                <input class="font-register-phone" id="phone" name="_countryphone"  type="text" placeholder="vui lòng nhập số tài khoản">
+                            </div>
+
+                            <div class="container-log-password-no1">
+                                <div class="box-login">Mật khẩu</div>
+                                <div style="width: 60%">
+                                    <input id="input_password_register" class="input-all" type="password" placeholder="vui lòng nhập mật khẩu">
+                                </div>
+
+                                <div class="box-eye" onclick="showEyesPasswordRegister()">
+                                    <img id="eyes_password_register" src="/svg/close-eyes.svg" alt="close-eye" width="20" height="20">
+                                </div>
+
+                            </div>
+
+
+                            <div class="qz-forgot-password-no1"></div>
+
+                            <div class="container-log-btn-no1">
+                                <div class="btn-logo-logo-no1">Đăng nhập / Đăng ký</div>
+
+                                <div class="qz-box-otp">
+                                    <input class="qz-input-otp" placeholder="Nhập OTP" >
+                                    <div class="qz-btn-otp">Nhận mã</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- end div nhấn nút đăng ký tài khoản và password-->
+
+
+
+
+
+                    </div>
+                    <!--end div phần thân 3-->
+
+                </div>
+
+                <div class="popup-content_box-policy">
+                    <div class="show-text">
+                        <p> Khi đăng ký, bạn xác nhận rằng bạn đã đọc và đồng ý tuân thủ Điều khoản sử dụng
+                            <span class="font-span">Thỏa thuận người dùng</span> và
+                            <span class="font-span">Chính sách quyền riêng tư</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--end bọc thân-->
+        </div>
+        <!--end popup hiển thị -->
+
+
+
+
+
+
+    </div>
+    <!--ket thuc phan boc duoi top-->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="/js/showFlagIntelTelInput.js"></script>
+<script src="/js/showPopupLogin.js"></script>
+<script src="/js/clonePopup.js"></script>
+<script src="/js/changerLogin.js"></script>
+<script src="/js/inputHandler.js"></script>
+<script src="/js/showPopupLive.js"></script>
+<script src="/js/showPopupSearchDelete.js"></script>
+<script src="/js/deleteSearch.js"></script>
+
+
 </body>
 </html>
